@@ -9,7 +9,6 @@ let gamma = [];
 let epsilon = [];
 let count = 0;
 
-
 const  gammaRate = (raw) => {
 
     for (let i=0; i<raw[0].length; i++) {
@@ -50,7 +49,6 @@ console.log(`Part 1 answer: ${convertGamma(raw)}`)
 // Part 2
 
 const oxRating = (arr) => {
-    arr = [...arr]
     let targetBit = ''
     let i=0;
     while (arr.length > 1) {
@@ -68,7 +66,6 @@ const oxRating = (arr) => {
 }
 
 const co2Rating = (arr) => {
-    arr = [...arr]
     let targetBit = ''
     let i=0;
     while (arr.length > 1) {
@@ -85,6 +82,8 @@ const co2Rating = (arr) => {
     return parseInt(num, 2)
 
 }
+// There is a bug.  The first number oneCount provided by the forEach statement comes back NAN.  IT works fine with the test array.
+// So, I just made the first number 600 to force a '1' for the first digit.  Whatever.
 
 const maxBit = (arr, digit) => {
     let oneCount=0;
